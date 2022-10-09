@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import "./App.css";
 import ProjectImageSlider from "./ProjectImageSlider";
+import introBackground from "./img/intro-bg.png";
 import githubClone from "./img/home.png";
+import todoList from "./img/todo-list.png";
+import linkArrow from "./img/diagonal-arrow.svg";
 
 function App() {
     useEffect(() => {
@@ -24,11 +27,7 @@ function App() {
             </header>
             <main className="overall-content-container">
                 <section className="intro-container">
-                    <img
-                        src={require("./img/intro-bg.png")}
-                        alt=""
-                        className="intro-bg"
-                    />
+                    <img src={introBackground} alt="" className="intro-bg" />
                     <div className="intro-content content-container">
                         <span className="intro-title">
                             <h1>Hi, my name is Brandon.</h1>
@@ -38,7 +37,15 @@ function App() {
                             </h2>
                         </span>
                         <button
-                            onClick={() => console.log("t")}
+                            onClick={() =>
+                                document
+                                    .querySelector(".about-container")
+                                    .scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "center",
+                                        inline: "nearest",
+                                    })
+                            }
                             className="scroll-more-btn btn vertical-center"
                         >
                             Click to see more{" "}
@@ -51,7 +58,7 @@ function App() {
                     </div>
                 </section>
                 <section className="about-container">
-                    <div className="content-container">
+                    <div className="row content-container">
                         <span>
                             <h1>About</h1>
                             <p>
@@ -72,12 +79,9 @@ function App() {
                 <section className="projects-container">
                     <div className="content-container">
                         <h1>Projects</h1>
-                        <div className="project-container">
+                        <div className="project-container row">
                             <div className="project-container-display">
                                 <div className="project-container-backdrop "></div>
-                                {/* <svg className="project-container-backdrop">
-                                    <rect width="100%" height="100%" />
-                                </svg> */}
                                 <img
                                     src={githubClone}
                                     alt=""
@@ -85,31 +89,72 @@ function App() {
                                 />
                             </div>
                             <span>
-                                <h2>
-                                    GitHub Clone{" "}
-                                    <a
-                                        href="https://github.com/BrandonC123/github-clone"
-                                        rel="noreferrer"
-                                        target="_blank"
-                                    >
-                                        Repo
-                                    </a>{" "}
-                                    <a
-                                        href="https://github-clone-5883f.web.app/"
-                                        rel="noreferrer"
-                                        target="_blank"
-                                    >
-                                        Live
-                                    </a>
-                                </h2>
+                                <h2>GitHub Clone </h2>
                                 <p>
-                                    Partial clone of the GitHub website. <br />{" "}
-                                    Core implemented features include creating
-                                    user accounts and repositories, file upload,
-                                    and more. Please visit the website and
+                                    Partial clone of the GitHub website. Core
+                                    implemented features include creating user
+                                    accounts and repositories, file upload, and
+                                    more. Feel free to visit the website and
                                     create an account or use the provided demo
                                     account to see more.
                                 </p>
+                                <a
+                                    href="https://github.com/BrandonC123/github-clone"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    className="project-link"
+                                >
+                                    Repo
+                                </a>{" "}
+                                <a
+                                    href="https://github-clone-5883f.web.app/"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    className="project-link"
+                                >
+                                    Live
+                                    <img
+                                        width={"15px"}
+                                        src={linkArrow}
+                                        alt=""
+                                    />
+                                </a>
+                            </span>
+                        </div>
+                        <div className="project-container row">
+                            <div className="project-container-display">
+                                <div className="project-container-backdrop "></div>
+                                <img
+                                    src={todoList}
+                                    alt=""
+                                    className="project-container-img"
+                                />
+                            </div>
+                            <span>
+                                <h2>Todo List App </h2>
+                                <p>
+                                    Responsive todo list web app that tracks
+                                    todos and projects. Each todo has the option
+                                    to add a due date and priority level. After
+                                    creation each item is saved into Cloud
+                                    Firestore until deleted.
+                                </p>
+                                <a
+                                    href="https://github.com/BrandonC123/todo-list"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    className="project-link"
+                                >
+                                    Repo
+                                </a>{" "}
+                                <a
+                                    href="https://todo-list-f9f8d.web.app/"
+                                    rel="noreferrer"
+                                    target="_blank"
+                                    className="project-link"
+                                >
+                                    Live
+                                </a>
                             </span>
                         </div>
                     </div>
