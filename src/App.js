@@ -20,7 +20,10 @@ function App() {
                 <section className="intro-container">
                     <img src={introBackground} alt="" className="intro-bg" />
                     <div className="intro-content content-container">
-                        <span className="intro-title">
+                        <span
+                            style={{ textAlign: "center" }}
+                            className="intro-title"
+                        >
                             <h1>Hi, my name is Brandon.</h1>
                             <h2>
                                 I am a frontend developer majoring in Computer
@@ -75,6 +78,7 @@ function App() {
                                 href="https://github-clone-5883f.web.app/"
                                 rel="noreferrer"
                                 target="_blank"
+                                className="project-link"
                             >
                                 <div className="project-container-display">
                                     <div className="project-container-backdrop "></div>
@@ -110,11 +114,11 @@ function App() {
                                     className="project-link"
                                 >
                                     Live
-                                    <img
+                                    {/* <img
                                         width={"15px"}
                                         src={linkArrow}
                                         alt=""
-                                    />
+                                    /> */}
                                 </a>
                             </span>
                         </div>
@@ -123,6 +127,7 @@ function App() {
                                 rel="noreferrer"
                                 target="_blank"
                                 href="https://todo-list-f9f8d.web.app/"
+                                className="project-img-link"
                             >
                                 <div className="project-container-display">
                                     <div className="project-container-backdrop "></div>
@@ -142,12 +147,7 @@ function App() {
                                     creation each item is saved into Cloud
                                     Firestore until deleted.
                                 </p>
-                                <span
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                    }}
-                                >
+                                <span>
                                     <a
                                         href="https://github.com/BrandonC123/todo-list"
                                         rel="noreferrer"
@@ -168,25 +168,30 @@ function App() {
                             </span>
                         </div>
                         <div className="project-container row">
-                            <div className="project-container-display">
-                                <div className="project-container-backdrop "></div>
-                                <img
-                                    src={shoppingCart}
-                                    alt=""
-                                    className="project-container-img"
-                                />
-                            </div>
+                            <a
+                                href="https://brandonc123.github.io/shopping-cart/"
+                                rel="noreferrer"
+                                target="_blank"
+                                className="project-img-link"
+                            >
+                                <div className="project-container-display">
+                                    <div className="project-container-backdrop "></div>
+                                    <img
+                                        src={shoppingCart}
+                                        alt=""
+                                        className="project-container-img"
+                                    />
+                                </div>
+                            </a>
                             <span>
                                 <h2>Shopping Cart App</h2>
                                 <p>
-                                    Responsive todo list web app that tracks
-                                    todos and projects. Each todo has the option
-                                    to add a due date and priority level. After
-                                    creation each item is saved into Cloud
-                                    Firestore until deleted.
+                                    Demo shopping cart webpage with an image
+                                    slider homepage, main shop page, and view
+                                    cart page.
                                 </p>
                                 <a
-                                    href="https://github.com/BrandonC123/todo-list"
+                                    href="https://github.com/BrandonC123/shopping-cart"
                                     rel="noreferrer"
                                     target="_blank"
                                     className="project-link"
@@ -194,7 +199,7 @@ function App() {
                                     Repo
                                 </a>{" "}
                                 <a
-                                    href="https://todo-list-f9f8d.web.app/"
+                                    href="https://brandonc123.github.io/shopping-cart/"
                                     rel="noreferrer"
                                     target="_blank"
                                     className="project-link"
@@ -203,6 +208,14 @@ function App() {
                                 </a>
                             </span>
                         </div>
+                        <a
+                            href="https://github.com/BrandonC123"
+                            rel="noreferrer"
+                            target="_blank"
+                            className="project-link"
+                        >
+                            Visit my GitHub below or click here to see more!
+                        </a>
                     </div>
                 </section>
                 <ContactContainer />

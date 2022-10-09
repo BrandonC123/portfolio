@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <header className="header">
-            <nav className="header-nav container">
+            <div className="header-container">
                 <button
                     onClick={() => {
                         document
@@ -12,39 +12,59 @@ const Header = () => {
                                 inline: "nearest",
                             });
                     }}
-                    className="header-btn"
+                    className="img-btn"
                 >
-                    Home
+                    <img
+                        src={require("../img/logo.png")}
+                        alt=""
+                        className="header-logo"
+                    />
                 </button>
-                <button
-                    onClick={() => {
-                        document
-                            .querySelector(".about-container")
-                            .scrollIntoView({
-                                behavior: "smooth",
-                                block: "center",
-                                inline: "nearest",
-                            });
-                    }}
-                    className="header-btn"
-                >
-                    About
-                </button>
-                <button
-                    onClick={() => {
-                        document
-                            .querySelector(".contact-container")
-                            .scrollIntoView({
-                                behavior: "smooth",
-                                block: "center",
-                                inline: "nearest",
-                            });
-                    }}
-                    className="header-btn"
-                >
-                    Contact
-                </button>
-            </nav>
+                <nav className="header-nav container">
+                    <button
+                        onClick={() => {
+                            document
+                                .querySelector(".intro-container")
+                                .scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "center",
+                                    inline: "nearest",
+                                });
+                        }}
+                        className="header-btn"
+                    >
+                        Home
+                    </button>
+                    <button
+                        onClick={() => {
+                            document
+                                .querySelector(".about-container")
+                                .scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "center",
+                                    inline: "nearest",
+                                });
+                        }}
+                        className="header-btn"
+                    >
+                        About
+                    </button>
+                    <button
+                        onClick={() => {
+                            document
+                                .querySelector(".contact-container")
+                                .scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "center",
+                                    inline: "nearest",
+                                });
+                        }}
+                        className="header-btn"
+                    >
+                        Contact
+                    </button>
+                </nav>
+            </div>
         </header>
     );
 };
