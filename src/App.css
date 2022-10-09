@@ -56,9 +56,13 @@ img {
     margin: 0 auto;
 }
 
-.header-link {
+.header-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
     color: #f5f5f5;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .content-container {
@@ -157,16 +161,20 @@ img {
 }
 
 .project-link {
-    color: #41668b;
+    color: #87ceeb;
     text-decoration: none;
     font-size: 1.25rem;
     font-weight: 500;
 }
 
 @media (hover) {
-    .project-link:hover {
+    .project-link:hover,
+    .header-btn:hover {
         color: #6b95c0;
         text-decoration: underline;
+    }
+    .btn:hover {
+        background-color: #41668b;
     }
 }
 
@@ -182,4 +190,9 @@ img {
     .project-container-img {
         grid-column: 2 / -1;
     }
+}
+
+.contact-container {
+    background-color: #836418;
+    padding: 1em 0;
 }

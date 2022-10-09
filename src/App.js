@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import "./App.css";
-import ProjectImageSlider from "./ProjectImageSlider";
+import Header from "./components/Header";
+import ProjectImageSlider from "./components/ProjectImageSlider";
 import introBackground from "./img/intro-bg.png";
 import githubClone from "./img/home.png";
 import todoList from "./img/todo-list.png";
+import shoppingCart from "./img/shopping-cart.png";
 import linkArrow from "./img/diagonal-arrow.svg";
+import ContactContainer from "./components/ContactContainer";
 
 function App() {
     useEffect(() => {
@@ -12,19 +15,7 @@ function App() {
     });
     return (
         <>
-            <header className="header">
-                <nav className="header-nav container">
-                    <a href="" className="header-link">
-                        Home
-                    </a>
-                    <a href="#" className="header-link">
-                        About
-                    </a>
-                    <a href="" className="header-link">
-                        Contact
-                    </a>
-                </nav>
-            </header>
+            <Header />
             <main className="overall-content-container">
                 <section className="intro-container">
                     <img src={introBackground} alt="" className="intro-bg" />
@@ -68,9 +59,9 @@ function App() {
                             </p>
                             <p>
                                 I am currently looking for a web-based
-                                internship position. I invite you to explore any
-                                of my projects and perhaps we can get in touch.
-                                Thanks!
+                                internship opportunity. I invite you to explore
+                                any of my projects and perhaps we can get in
+                                touch. Thanks!
                             </p>
                         </span>
                         <ProjectImageSlider />
@@ -80,14 +71,20 @@ function App() {
                     <div className="content-container">
                         <h1>Projects</h1>
                         <div className="project-container row">
-                            <div className="project-container-display">
-                                <div className="project-container-backdrop "></div>
-                                <img
-                                    src={githubClone}
-                                    alt=""
-                                    className="project-container-img"
-                                />
-                            </div>
+                            <a
+                                href="https://github-clone-5883f.web.app/"
+                                rel="noreferrer"
+                                target="_blank"
+                            >
+                                <div className="project-container-display">
+                                    <div className="project-container-backdrop "></div>
+                                    <img
+                                        src={githubClone}
+                                        alt=""
+                                        className="project-container-img"
+                                    />
+                                </div>
+                            </a>
                             <span>
                                 <h2>GitHub Clone </h2>
                                 <p>
@@ -122,16 +119,65 @@ function App() {
                             </span>
                         </div>
                         <div className="project-container row">
+                            <a
+                                rel="noreferrer"
+                                target="_blank"
+                                href="https://todo-list-f9f8d.web.app/"
+                            >
+                                <div className="project-container-display">
+                                    <div className="project-container-backdrop "></div>
+                                    <img
+                                        src={todoList}
+                                        alt=""
+                                        className="project-container-img"
+                                    />
+                                </div>
+                            </a>
+                            <span>
+                                <h2>Todo List App </h2>
+                                <p>
+                                    Responsive todo list web app that tracks
+                                    todos and projects. Each todo has the option
+                                    to add a due date and priority level. After
+                                    creation each item is saved into Cloud
+                                    Firestore until deleted.
+                                </p>
+                                <span
+                                    style={{
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                    }}
+                                >
+                                    <a
+                                        href="https://github.com/BrandonC123/todo-list"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="project-link"
+                                    >
+                                        Repo
+                                    </a>{" "}
+                                    <a
+                                        href="https://todo-list-f9f8d.web.app/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="project-link"
+                                    >
+                                        Live
+                                    </a>
+                                </span>
+                            </span>
+                        </div>
+                        <div className="project-container row">
                             <div className="project-container-display">
                                 <div className="project-container-backdrop "></div>
                                 <img
-                                    src={todoList}
+                                    src={shoppingCart}
                                     alt=""
                                     className="project-container-img"
                                 />
                             </div>
                             <span>
-                                <h2>Todo List App </h2>
+                                <h2>Shopping Cart App</h2>
                                 <p>
                                     Responsive todo list web app that tracks
                                     todos and projects. Each todo has the option
@@ -159,6 +205,7 @@ function App() {
                         </div>
                     </div>
                 </section>
+                <ContactContainer />
             </main>
         </>
     );
