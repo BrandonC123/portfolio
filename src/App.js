@@ -6,8 +6,8 @@ import introBackground from "./img/intro-bg.png";
 import githubClone from "./img/home.png";
 import todoList from "./img/todo-list.png";
 import shoppingCart from "./img/shopping-cart.png";
-import linkArrow from "./img/diagonal-arrow.svg";
 import ContactContainer from "./components/ContactContainer";
+import TechnologyStack from "./components/TechnologyStack";
 
 function App() {
     useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
                     <div className="intro-content content-container">
                         <span
                             style={{ textAlign: "center" }}
-                            className="intro-title"
+                            className="intro-title title-text"
                         >
                             <h1>Hi, my name is Brandon.</h1>
                             <h2>
@@ -54,7 +54,7 @@ function App() {
                 <section className="about-container">
                     <div className="row content-container">
                         <span>
-                            <h1>About</h1>
+                            <h1 className="title-text">About</h1>
                             <p>
                                 Welcome to my website! Here you will find my
                                 various projects as well as related links and
@@ -72,7 +72,7 @@ function App() {
                 </section>
                 <section className="projects-container">
                     <div className="content-container">
-                        <h1>Projects</h1>
+                        <h1 className="title-text">Projects</h1>
                         <div className="project-container row">
                             <a
                                 href="https://github-clone-5883f.web.app/"
@@ -90,7 +90,7 @@ function App() {
                                 </div>
                             </a>
                             <span>
-                                <h2>GitHub Clone </h2>
+                                <h2 className="title-text">GitHub Clone </h2>
                                 <p>
                                     Partial clone of the GitHub website. Core
                                     implemented features include creating user
@@ -99,6 +99,14 @@ function App() {
                                     create an account or use the provided demo
                                     account to see more.
                                 </p>
+                                <TechnologyStack
+                                    stack={[
+                                        "react",
+                                        "javascript",
+                                        "css",
+                                        "firebase",
+                                    ]}
+                                />
                                 <a
                                     href="https://github.com/BrandonC123/github-clone"
                                     rel="noreferrer"
@@ -114,11 +122,6 @@ function App() {
                                     className="project-link"
                                 >
                                     Live
-                                    {/* <img
-                                        width={"15px"}
-                                        src={linkArrow}
-                                        alt=""
-                                    /> */}
                                 </a>
                             </span>
                         </div>
@@ -139,7 +142,7 @@ function App() {
                                 </div>
                             </a>
                             <span>
-                                <h2>Todo List App </h2>
+                                <h2 className="title-text">Todo List App </h2>
                                 <p>
                                     Responsive todo list web app that tracks
                                     todos and projects. Each todo has the option
@@ -147,6 +150,14 @@ function App() {
                                     creation each item is saved into Cloud
                                     Firestore until deleted.
                                 </p>
+                                <TechnologyStack
+                                    stack={[
+                                        "html",
+                                        "javascript",
+                                        "css",
+                                        "firebase",
+                                    ]}
+                                />
                                 <span>
                                     <a
                                         href="https://github.com/BrandonC123/todo-list"
@@ -184,12 +195,22 @@ function App() {
                                 </div>
                             </a>
                             <span>
-                                <h2>Shopping Cart App</h2>
+                                <h2 className="title-text">
+                                    Shopping Cart App
+                                </h2>
                                 <p>
                                     Demo shopping cart webpage with an image
                                     slider homepage, main shop page, and view
                                     cart page.
                                 </p>
+                                <TechnologyStack
+                                    stack={[
+                                        "react",
+                                        "javascript",
+                                        "css",
+                                        "firebase",
+                                    ]}
+                                />
                                 <a
                                     href="https://github.com/BrandonC123/shopping-cart"
                                     rel="noreferrer"
