@@ -174,20 +174,12 @@ p {
 }
 
 .slider-img {
-    transition: transform ease-in 0.35s, opacity ease-out 0.5s;
+    transition: transform ease-in 0.25s, opacity ease-out 0.35s;
     opacity: 0;
 }
 
 .slider-img:nth-child(1) {
     opacity: 1;
-}
-
-.slide-right {
-    transform: translateX(50%) !important;
-}
-
-.slide-left {
-    transform: translateX(-50%) !important;
 }
 
 .project-cycle {

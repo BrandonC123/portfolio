@@ -22,7 +22,7 @@ const ProjectImageSlider = () => {
             } else {
                 tempCounter = 0;
             }
-            resetImagePosition(counter, tempCounter, "slide-right");
+            resetImagePosition(counter, tempCounter, true);
         } else {
             if (counter - 1 >= 0) {
                 tempCounter = counter - 1;
@@ -30,21 +30,29 @@ const ProjectImageSlider = () => {
             } else {
                 tempCounter = srcArray.length - 1;
             }
-            resetImagePosition(counter, tempCounter, "slide-left");
+            resetImagePosition(counter, tempCounter, false);
         }
         setCounter(tempCounter);
     }
     function resetImagePosition(prevCount, curCount, direction) {
         const images = document.querySelectorAll(".slider-img");
-        if (images[prevCount].classList.contains(direction)) {
-            images[prevCount].classList.remove(direction);
-        }
-        images[prevCount].classList.add(direction);
-        images[prevCount].style.opacity = "0";
-        images[curCount].style.opacity = "1";
+        const prevImg = images[prevCount];
+        const curImg = images[curCount];
+        let originalPos = -(prevCount * 100);
+        const offsetDistance = direction ? 50 : -50;
+
+        prevImg.style.transform = `translateX(${
+            originalPos + offsetDistance
+        }%)`;
+        prevImg.style.opacity = "0";
+        curImg.style.opacity = "1";
+
         setTimeout(() => {
-            images[prevCount].classList.remove(direction);
-        }, 350);
+            // Bypass transition time
+            prevImg.classList.toggle("slider-img");
+            prevImg.style.transform = `translateX(${originalPos}%)`;
+            prevImg.classList.toggle("slider-img");
+        }, 250);
     }
     function displayImages() {
         return srcArray.map((imgSrc, index) => {
