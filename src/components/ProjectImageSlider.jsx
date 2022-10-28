@@ -1,35 +1,64 @@
 import { useEffect, useState } from "react";
-import githubClone from "../img/home.png";
+import ghHome from "../img/gh-home.png";
+import ghProfile from "../img/gh-profile.png";
 import todoList from "../img/todo-list.png";
 import shoppingCart from "../img/shopping-cart.png";
+import memoryCard from "../img/memory-card.png";
 
 const ProjectImageSlider = () => {
-    const srcArray = [githubClone, todoList, shoppingCart];
+    const srcArray = [ghHome, ghProfile, todoList, shoppingCart, memoryCard];
     const [counter, setCounter] = useState(0);
     useEffect(() => {
         let interval = setInterval(() => {
             cycleImage(true);
-        }, 10000);
-        setCurrentImage(srcArray[counter]);
+        }, 15000);
         return () => clearInterval(interval);
     }, [counter]);
-    const [currentImage, setCurrentImage] = useState(srcArray[counter]);
     function cycleImage(add) {
+        let tempCounter;
         if (add) {
             if (counter + 1 < srcArray.length) {
-                setCounter((counter) => counter + 1);
+                tempCounter = counter + 1;
             } else {
-                setCounter(0);
+                tempCounter = 0;
             }
+            resetImagePosition(counter, tempCounter, "slide-right");
         } else {
             if (counter - 1 >= 0) {
+                tempCounter = counter - 1;
                 setCounter((counter) => counter - 1);
             } else {
-                setCounter(srcArray.length - 1);
+                tempCounter = srcArray.length - 1;
             }
+            resetImagePosition(counter, tempCounter, "slide-left");
         }
+        setCounter(tempCounter);
     }
-
+    function resetImagePosition(prevCount, curCount, direction) {
+        const images = document.querySelectorAll(".slider-img");
+        if (images[prevCount].classList.contains(direction)) {
+            images[prevCount].classList.remove(direction);
+        }
+        images[prevCount].classList.add(direction);
+        images[prevCount].style.opacity = "0";
+        images[curCount].style.opacity = "1";
+        setTimeout(() => {
+            images[prevCount].classList.remove(direction);
+        }, 350);
+    }
+    function displayImages() {
+        return srcArray.map((imgSrc, index) => {
+            return (
+                <img
+                    key={index}
+                    src={imgSrc}
+                    alt=""
+                    style={{ transform: `translateX(-${index * 100}%)` }}
+                    className="slider-img"
+                />
+            );
+        });
+    }
     return (
         <div className="project-image-slider">
             <div className="project-cycle">
@@ -50,7 +79,7 @@ const ProjectImageSlider = () => {
                     {"→"}
                 </button>
             </div>
-            <img src={currentImage} alt="" />
+            <div style={{ display: "flex" }}>{displayImages()}</div>
         </div>
     );
 };

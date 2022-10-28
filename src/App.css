@@ -29,6 +29,10 @@ p {
     margin: 0 0 1em;
 }
 
+.hide {
+    display: none;
+}
+
 .container {
     width: 90%;
     max-width: 1600px;
@@ -96,7 +100,7 @@ p {
 
 .content-container {
     width: 90%;
-    max-width: 950px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
     z-index: 1;
@@ -158,8 +162,32 @@ p {
     border-top: 1px solid gray;
 }
 
+.about-container-text {
+    min-width: 250px;
+}
+
 .project-image-slider {
     position: relative;
+    overflow: hidden;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.slider-img {
+    transition: transform ease-in 0.35s, opacity ease-out 0.5s;
+    opacity: 0;
+}
+
+.slider-img:nth-child(1) {
+    opacity: 1;
+}
+
+.slide-right {
+    transform: translateX(50%) !important;
+}
+
+.slide-left {
+    transform: translateX(-50%) !important;
 }
 
 .project-cycle {
@@ -169,6 +197,7 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1;
 }
 
 .image-cycle-btn {
@@ -205,6 +234,10 @@ p {
     grid-column: 1 / 6;
 }
 
+.project-container-backdrop-hover {
+    background-color: rgba(60, 114, 168, 0.5);
+}
+
 .project-container-img {
     margin-top: 1em;
     margin-left: 0.5em;
@@ -213,12 +246,18 @@ p {
 
 .tech-stack-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0 auto;
     background-color: rgb(139, 139, 139);
-    padding: 0.75em 0;
+    padding: 0.75em 0.5em;
     border-radius: 0.25em;
     gap: 0.5em;
+    max-width: 350px;
+}
+
+.tech-stack-icon {
+    max-width: 45px;
+    aspect-ratio: 1 / 1.25;
 }
 
 .project-link {
@@ -268,10 +307,6 @@ p {
         height: 85%;
         grid-column: 1 / 5;
     }
-    .tech-stack-container {
-        justify-content: space-between;
-        max-width: 350px;
-    }
     .contact-icon-container {
         flex-direction: row !important;
     }
@@ -285,15 +320,20 @@ p {
     .content-container {
         text-align: left;
     }
-    .project-img-link {
-        max-width: 550px;
+    .project-container {
+        display: grid;
+        grid-template-columns: 58% 38%;
+        justify-content: space-between;
     }
     .tech-stack-container {
-        max-width: 450px;
+        max-width: 325px;
+        /* justify-content: flex-start; */
+        margin: 0;
     }
 }
 
 .contact-container {
+    margin-top: 1em;
     background: rgb(36, 36, 36);
     background: linear-gradient(
         180deg,
