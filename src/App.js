@@ -1,24 +1,49 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import ProjectImageSlider from "./components/ProjectImageSlider";
-import introBackground from "./img/intro-bg.png";
 import githubClone from "./img/gh-home.png";
 import todoList from "./img/todo-list.png";
 import shoppingCart from "./img/shopping-cart.png";
 import ContactContainer from "./components/ContactContainer";
-import TechnologyStack from "./components/TechnologyStack";
 import bg from "./img/bg.png";
 
 function App() {
+    const introContainer = useRef();
+    const aboutContainer = useRef();
     useEffect(() => {
         document.querySelector(".intro-title").classList.add("slidein");
-    });
+    }, []);
+    function toggleHeaderColor(e) {
+        e.forEach((entry) => {
+            const containerInView = entry.target;
+            if (entry.isIntersecting) {
+                if (containerInView.isSameNode(introContainer.current)) {
+                    document.querySelector(".header").style.backgroundColor =
+                        "";
+                } else if (containerInView.isSameNode(aboutContainer.current)) {
+                    document.querySelector(".header").style.backgroundColor =
+                        "#242424";
+                }
+            }
+        });
+    }
+    useEffect(() => {
+        const introObs = new IntersectionObserver(toggleHeaderColor, {
+            threshold: 0.8,
+        });
+        const aboutObs = new IntersectionObserver(toggleHeaderColor, {
+            rootMargin: "-100px",
+            threshold: 1.0,
+        });
+        introObs.observe(introContainer.current);
+        aboutObs.observe(aboutContainer.current);
+    }, []);
     return (
         <>
             <Header />
             <main className="overall-content-container">
-                <section className="intro-container">
+                <section ref={introContainer} className="intro-container">
                     <img src={bg} alt="" className="intro-bg" />
                     <div className="intro-content content-container">
                         <span
@@ -52,7 +77,7 @@ function App() {
                         </button>
                     </div>
                 </section>
-                <section className="about-container">
+                <section ref={aboutContainer} className="about-container">
                     <div className="row content-container">
                         <span className="about-container-text">
                             <h1 className="title-text">About</h1>
