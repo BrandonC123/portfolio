@@ -3,11 +3,12 @@ import "./App.css";
 import Header from "./components/Header";
 import ProjectImageSlider from "./components/ProjectImageSlider";
 import introBackground from "./img/intro-bg.png";
-import githubClone from "./img/home.png";
+import githubClone from "./img/gh-home.png";
 import todoList from "./img/todo-list.png";
 import shoppingCart from "./img/shopping-cart.png";
 import ContactContainer from "./components/ContactContainer";
 import TechnologyStack from "./components/TechnologyStack";
+import bg from "./img/bg.png";
 
 function App() {
     useEffect(() => {
@@ -18,7 +19,7 @@ function App() {
             <Header />
             <main className="overall-content-container">
                 <section className="intro-container">
-                    <img src={introBackground} alt="" className="intro-bg" />
+                    <img src={bg} alt="" className="intro-bg" />
                     <div className="intro-content content-container">
                         <span
                             style={{ textAlign: "center" }}
@@ -53,7 +54,7 @@ function App() {
                 </section>
                 <section className="about-container">
                     <div className="row content-container">
-                        <span>
+                        <span className="about-container-text">
                             <h1 className="title-text">About</h1>
                             <p>
                                 Welcome to my website! Here you will find my
@@ -73,12 +74,12 @@ function App() {
                 <section className="projects-container">
                     <div className="content-container">
                         <h1 className="title-text">Projects</h1>
-                        <div className="project-container row">
+                        <div className="project-container">
                             <a
                                 href="https://github-clone-5883f.web.app/"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="project-link"
+                                className="project-img-link"
                             >
                                 <div className="project-container-display">
                                     <div className="project-container-backdrop "></div>
@@ -99,14 +100,12 @@ function App() {
                                     create an account or use the provided demo
                                     account to see more.
                                 </p>
-                                <TechnologyStack
-                                    stack={[
-                                        "react",
-                                        "javascript",
-                                        "css",
-                                        "firebase",
-                                    ]}
-                                />
+                                <p>
+                                    Technolgies: <strong>React</strong>,{" "}
+                                    <strong>JavaScript</strong>,{" "}
+                                    <strong>CSS</strong>,{" "}
+                                    <strong>Firebase</strong>
+                                </p>
                                 <a
                                     href="https://github.com/BrandonC123/github-clone"
                                     rel="noreferrer"
@@ -125,7 +124,7 @@ function App() {
                                 </a>
                             </span>
                         </div>
-                        <div className="project-container row">
+                        <div className="project-container">
                             <a
                                 rel="noreferrer"
                                 target="_blank"
@@ -150,14 +149,12 @@ function App() {
                                     creation each item is saved into Cloud
                                     Firestore until deleted.
                                 </p>
-                                <TechnologyStack
-                                    stack={[
-                                        "html",
-                                        "javascript",
-                                        "css",
-                                        "firebase",
-                                    ]}
-                                />
+                                <p>
+                                    Technolgies: <strong>HTML</strong>,{" "}
+                                    <strong>JavaScript</strong>,{" "}
+                                    <strong>CSS</strong>,{" "}
+                                    <strong>Firebase</strong>
+                                </p>
                                 <span>
                                     <a
                                         href="https://github.com/BrandonC123/todo-list"
@@ -178,7 +175,7 @@ function App() {
                                 </span>
                             </span>
                         </div>
-                        <div className="project-container row">
+                        <div className="project-container">
                             <a
                                 href="https://brandonc123.github.io/shopping-cart/"
                                 rel="noreferrer"
@@ -203,14 +200,11 @@ function App() {
                                     slider homepage, main shop page, and view
                                     cart page.
                                 </p>
-                                <TechnologyStack
-                                    stack={[
-                                        "react",
-                                        "javascript",
-                                        "css",
-                                        "firebase",
-                                    ]}
-                                />
+                                <p>
+                                    Technolgies: <strong>HTML</strong>,{" "}
+                                    <strong>JavaScript</strong>,{" "}
+                                    <strong>CSS</strong>,{" "}
+                                </p>
                                 <a
                                     href="https://github.com/BrandonC123/shopping-cart"
                                     rel="noreferrer"
@@ -229,14 +223,6 @@ function App() {
                                 </a>
                             </span>
                         </div>
-                        <a
-                            href="https://github.com/BrandonC123"
-                            rel="noreferrer"
-                            target="_blank"
-                            className="project-link"
-                        >
-                            Visit my GitHub below or click here to see more!
-                        </a>
                     </div>
                 </section>
                 <ContactContainer />

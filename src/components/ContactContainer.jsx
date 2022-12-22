@@ -31,8 +31,9 @@ const ContactContainer = () => {
                         Linkedin
                     </a>
                     <a
-                        href={resume}
-                        download={"Brandon Chu Resume.pdf"}
+                        href="https://drive.google.com/file/d/13hGZbrIS440UCIgCUgAzq0BIy_of4itH/view"
+                        rel="noreferrer"
+                        target="_blank"
                         className="contact-link"
                     >
                         <img src={require("../img/paper.svg").default} alt="" />

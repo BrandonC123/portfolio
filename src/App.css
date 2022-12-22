@@ -16,6 +16,10 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+button {
+    font-family: "Open Sans", sans-serif;
+}
+
 img {
     max-width: 100%;
 }
@@ -65,7 +69,7 @@ p {
     top: 0;
     margin: 0 auto;
     padding: 1em 0;
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
     box-shadow: 0 0 5px black;
     z-index: 100;
 }
@@ -123,13 +127,12 @@ p {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* transform: translateY(50%); */
 }
 
 .intro-bg {
     position: absolute;
     top: 0;
-    opacity: 0.15;
+    opacity: 0.5;
     pointer-events: none;
     height: 100vh;
     width: 100vw;
@@ -160,6 +163,7 @@ p {
     padding: 2em 0;
     width: 90%;
     border-top: 1px solid gray;
+    z-index: 5;
 }
 
 .about-container-text {
