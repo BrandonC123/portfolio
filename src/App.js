@@ -11,33 +11,67 @@ import bg from "./img/bg.png";
 function App() {
     const introContainer = useRef();
     const aboutContainer = useRef();
+    const projectsContainer = useRef();
+    const contactContainer = useRef();
+
     useEffect(() => {
         document.querySelector(".intro-title").classList.add("slidein");
     }, []);
     function toggleHeaderColor(e) {
         e.forEach((entry) => {
-            const containerInView = entry.target;
             if (entry.isIntersecting) {
+                document.querySelectorAll(".header-btn").forEach((btn) => {
+                    btn.classList.remove("container-in-view");
+                });
+                const containerInView = entry.target;
                 if (containerInView.isSameNode(introContainer.current)) {
                     document.querySelector(".header").style.backgroundColor =
                         "";
                 } else if (containerInView.isSameNode(aboutContainer.current)) {
                     document.querySelector(".header").style.backgroundColor =
                         "#242424";
+                    document
+                        .querySelector(".about-btn")
+                        .classList.toggle("container-in-view");
+                } else if (
+                    containerInView.isSameNode(projectsContainer.current)
+                ) {
+                    document
+                        .querySelector(".projects-btn")
+                        .classList.toggle("container-in-view");
+                } else if (
+                    containerInView.isSameNode(contactContainer.current)
+                ) {
+                    document
+                        .querySelector(".contact-btn")
+                        .classList.toggle("container-in-view");
                 }
             }
         });
     }
     useEffect(() => {
-        const introObs = new IntersectionObserver(toggleHeaderColor, {
+        const fullThreshold = {
+            threshold: 1.0,
+        };
+        const introObs = new IntersectionObserver(
+            toggleHeaderColor,
+            fullThreshold
+        );
+        const aboutObs = new IntersectionObserver(
+            toggleHeaderColor,
+            fullThreshold
+        );
+        const projectsObs = new IntersectionObserver(toggleHeaderColor, {
             threshold: 0.8,
         });
-        const aboutObs = new IntersectionObserver(toggleHeaderColor, {
-            rootMargin: "-100px",
-            threshold: 1.0,
-        });
+        const contactObs = new IntersectionObserver(
+            toggleHeaderColor,
+            fullThreshold
+        );
         introObs.observe(introContainer.current);
         aboutObs.observe(aboutContainer.current);
+        projectsObs.observe(projectsContainer.current);
+        contactObs.observe(contactContainer.current);
     }, []);
     return (
         <>
@@ -96,7 +130,7 @@ function App() {
                         <ProjectImageSlider />
                     </div>
                 </section>
-                <section className="projects-container">
+                <section ref={projectsContainer} className="projects-container">
                     <div className="content-container">
                         <h1 className="title-text">Projects</h1>
                         <div className="project-container">
@@ -250,7 +284,7 @@ function App() {
                         </div>
                     </div>
                 </section>
-                <ContactContainer />
+                <ContactContainer ref={contactContainer} />
             </main>
         </>
     );

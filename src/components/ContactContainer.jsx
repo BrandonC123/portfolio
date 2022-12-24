@@ -1,8 +1,8 @@
-import resume from "./Brandon-Chu-Resume.pdf";
+import React from "react";
 
-const ContactContainer = () => {
+const ContactContainer = (props, contactContainer) => {
     return (
-        <section className="contact-container">
+        <section ref={contactContainer} className="contact-container">
             <div style={{ textAlign: "center" }} className="content-container">
                 <h3>Contact information:</h3>
                 <div className="contact-icon-container">
@@ -46,4 +46,4 @@ const ContactContainer = () => {
     );
 };
 
-export default ContactContainer;
+export default React.forwardRef(ContactContainer);

@@ -24,20 +24,6 @@ const Header = () => {
                     <button
                         onClick={() => {
                             document
-                                .querySelector(".intro-container")
-                                .scrollIntoView({
-                                    behavior: "smooth",
-                                    block: "center",
-                                    inline: "nearest",
-                                });
-                        }}
-                        className="header-btn"
-                    >
-                        Home
-                    </button>
-                    <button
-                        onClick={() => {
-                            document
                                 .querySelector(".about-container")
                                 .scrollIntoView({
                                     behavior: "smooth",
@@ -45,9 +31,23 @@ const Header = () => {
                                     inline: "nearest",
                                 });
                         }}
-                        className="header-btn"
+                        className="about-btn header-btn"
                     >
                         About
+                    </button>
+                    <button
+                        onClick={() => {
+                            document
+                                .querySelector(".projects-container")
+                                .scrollIntoView({
+                                    behavior: "smooth",
+                                    block: "center",
+                                    inline: "nearest",
+                                });
+                        }}
+                        className="projects-btn header-btn"
+                    >
+                        Projects
                     </button>
                     <button
                         onClick={() => {
@@ -59,7 +59,7 @@ const Header = () => {
                                     inline: "nearest",
                                 });
                         }}
-                        className="header-btn"
+                        className="contact-btn header-btn"
                     >
                         Contact
                     </button>
