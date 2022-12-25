@@ -6,16 +6,19 @@ import githubClone from "./img/gh-home.png";
 import todoList from "./img/todo-list.png";
 import shoppingCart from "./img/shopping-cart.png";
 import ContactContainer from "./components/ContactContainer";
+import githubDemo from "./img/github-demo.gif";
 import bg from "./img/bg.png";
+import ProjectDemo from "./components/ProjectDemo";
 
 function App() {
+    const titleContainer = useRef();
     const introContainer = useRef();
     const aboutContainer = useRef();
     const projectsContainer = useRef();
     const contactContainer = useRef();
 
     useEffect(() => {
-        document.querySelector(".intro-title").classList.add("slidein");
+        titleContainer.current.classList.add("slidein");
     }, []);
     function toggleHeaderColor(e) {
         e.forEach((entry) => {
@@ -36,15 +39,20 @@ function App() {
                 } else if (
                     containerInView.isSameNode(projectsContainer.current)
                 ) {
+                    document.querySelector(".header").style.backgroundColor =
+                        "#242424";
                     document
                         .querySelector(".projects-btn")
                         .classList.toggle("container-in-view");
                 } else if (
                     containerInView.isSameNode(contactContainer.current)
                 ) {
+                    document.querySelector(".header").style.backgroundColor =
+                        "#242424";
                     document
                         .querySelector(".contact-btn")
                         .classList.toggle("container-in-view");
+                    console.log("contact");
                 }
             }
         });
@@ -62,12 +70,12 @@ function App() {
             fullThreshold
         );
         const projectsObs = new IntersectionObserver(toggleHeaderColor, {
-            threshold: 0.8,
+            threshold: window.innerHeight < 900 ? 0.35 : 0.75,
         });
-        const contactObs = new IntersectionObserver(
-            toggleHeaderColor,
-            fullThreshold
-        );
+        const contactObs = new IntersectionObserver(toggleHeaderColor, {
+            threshold: 0.95,
+        });
+        console.log(window.innerHeight);
         introObs.observe(introContainer.current);
         aboutObs.observe(aboutContainer.current);
         projectsObs.observe(projectsContainer.current);
@@ -81,11 +89,14 @@ function App() {
                     <img src={bg} alt="" className="intro-bg" />
                     <div className="intro-content content-container">
                         <span
+                            ref={titleContainer}
                             style={{ textAlign: "center" }}
                             className="intro-title title-text"
                         >
-                            <h1>Hi, my name is Brandon.</h1>
-                            <h2>
+                            <h1 className="text-3xl">
+                                Hi, my name is Brandon.
+                            </h1>
+                            <h2 className="text-2xl">
                                 I am a frontend developer majoring in Computer
                                 Science.
                             </h2>
@@ -114,7 +125,7 @@ function App() {
                 <section ref={aboutContainer} className="about-container">
                     <div className="row content-container">
                         <span className="about-container-text">
-                            <h1 className="title-text">About</h1>
+                            <h1 className="text-2xl title-text">About</h1>
                             <p>
                                 Welcome to my website! Here you will find my
                                 various projects as well as related links and
@@ -132,7 +143,7 @@ function App() {
                 </section>
                 <section ref={projectsContainer} className="projects-container">
                     <div className="content-container">
-                        <h1 className="title-text">Projects</h1>
+                        <h1 className="text-2xl title-text">Projects</h1>
                         <div className="project-container">
                             <a
                                 href="https://github-clone-5883f.web.app/"
@@ -150,9 +161,11 @@ function App() {
                                 </div>
                             </a>
                             <span>
-                                <h2 className="title-text">GitHub Clone </h2>
+                                <h2 className="text-xl title-text">
+                                    GitHub Clone
+                                </h2>
                                 <p>
-                                    Partial clone of the GitHub website. Core
+                                    Clone of the GitHub website. Core
                                     implemented features include creating user
                                     accounts and repositories, file upload, and
                                     more. Feel free to visit the website and
@@ -160,27 +173,30 @@ function App() {
                                     account to see more.
                                 </p>
                                 <p>
-                                    Technolgies: <strong>React</strong>,{" "}
+                                    Technologies: <strong>React</strong>,{" "}
                                     <strong>JavaScript</strong>,{" "}
                                     <strong>CSS</strong>,{" "}
                                     <strong>Firebase</strong>
                                 </p>
-                                <a
-                                    href="https://github.com/BrandonC123/github-clone"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className="project-link"
-                                >
-                                    Repo
-                                </a>{" "}
-                                <a
-                                    href="https://github-clone-5883f.web.app/"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className="project-link"
-                                >
-                                    Live
-                                </a>
+                                <div className="flex items-center gap-2 mobile:justify-center lg:justify-start">
+                                    <a
+                                        href="https://github.com/BrandonC123/github-clone"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="project-link"
+                                    >
+                                        Repo
+                                    </a>
+                                    <a
+                                        href="https://github-clone-5883f.web.app/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="project-link"
+                                    >
+                                        Live
+                                    </a>
+                                    <ProjectDemo demoSrc={githubDemo} />
+                                </div>
                             </span>
                         </div>
                         <div className="project-container">
@@ -200,7 +216,9 @@ function App() {
                                 </div>
                             </a>
                             <span>
-                                <h2 className="title-text">Todo List App </h2>
+                                <h2 className="text-xl title-text">
+                                    Todo List App{" "}
+                                </h2>
                                 <p>
                                     Responsive todo list web app that tracks
                                     todos and projects. Each todo has the option
@@ -209,12 +227,12 @@ function App() {
                                     Firestore until deleted.
                                 </p>
                                 <p>
-                                    Technolgies: <strong>HTML</strong>,{" "}
+                                    Technologies: <strong>HTML</strong>,{" "}
                                     <strong>JavaScript</strong>,{" "}
                                     <strong>CSS</strong>,{" "}
                                     <strong>Firebase</strong>
                                 </p>
-                                <span>
+                                <div className="flex items-center gap-2 mobile:justify-center lg:justify-start">
                                     <a
                                         href="https://github.com/BrandonC123/todo-list"
                                         rel="noreferrer"
@@ -222,7 +240,7 @@ function App() {
                                         className="project-link"
                                     >
                                         Repo
-                                    </a>{" "}
+                                    </a>
                                     <a
                                         href="https://todo-list-f9f8d.web.app/"
                                         rel="noreferrer"
@@ -231,7 +249,7 @@ function App() {
                                     >
                                         Live
                                     </a>
-                                </span>
+                                </div>
                             </span>
                         </div>
                         <div className="project-container">
@@ -251,7 +269,7 @@ function App() {
                                 </div>
                             </a>
                             <span>
-                                <h2 className="title-text">
+                                <h2 className="text-xl title-text">
                                     Shopping Cart App
                                 </h2>
                                 <p>
@@ -260,26 +278,28 @@ function App() {
                                     cart page.
                                 </p>
                                 <p>
-                                    Technolgies: <strong>HTML</strong>,{" "}
+                                    Technologies: <strong>HTML</strong>,{" "}
                                     <strong>JavaScript</strong>,{" "}
                                     <strong>CSS</strong>,{" "}
                                 </p>
-                                <a
-                                    href="https://github.com/BrandonC123/shopping-cart"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className="project-link"
-                                >
-                                    Repo
-                                </a>{" "}
-                                <a
-                                    href="https://brandonc123.github.io/shopping-cart/"
-                                    rel="noreferrer"
-                                    target="_blank"
-                                    className="project-link"
-                                >
-                                    Live
-                                </a>
+                                <div className="flex items-center gap-2 mobile:justify-center lg:justify-start">
+                                    <a
+                                        href="https://github.com/BrandonC123/shopping-cart"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="project-link"
+                                    >
+                                        Repo
+                                    </a>{" "}
+                                    <a
+                                        href="https://brandonc123.github.io/shopping-cart/"
+                                        rel="noreferrer"
+                                        target="_blank"
+                                        className="project-link"
+                                    >
+                                        Live
+                                    </a>
+                                </div>
                             </span>
                         </div>
                     </div>

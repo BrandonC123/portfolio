@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --main-color: #242424;
     --accent-blue: #2a4158;
@@ -37,9 +41,18 @@ p {
     display: none;
 }
 
+.show {
+    display: block;
+}
+
 .container {
     width: 90%;
     max-width: 1600px;
+}
+
+.container-in-view {
+    color: #87ceeb !important;
+    font-weight: bold;
 }
 
 .btn {
@@ -69,7 +82,6 @@ p {
     top: 0;
     margin: 0 auto;
     padding: 1em 0;
-    /* background-color: var(--main-color); */
     box-shadow: 0 0 5px black;
     z-index: 100;
 }
@@ -145,15 +157,15 @@ p {
 }
 
 .slidein {
-    animation: slidein 0.5s;
+    animation: slidein 0.7s;
 }
 
 @keyframes slidein {
     from {
-        transform: translateY(-200%);
+        transform: translateY(-40vh);
     }
     to {
-        transform: translateY(0%);
+        transform: translateY(0vh);
     }
 }
 
@@ -206,8 +218,13 @@ p {
     cursor: pointer;
 }
 
+.projects-container {
+    scroll-margin-top: 80px;
+}
+
 .project-container {
     margin-bottom: 3em;
+    position: relative;
 }
 
 .project-container > p {
@@ -240,6 +257,25 @@ p {
     grid-column: 1 / -1;
 }
 
+.demo-proj-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.demo-btn {
+    background-color: rgb(233, 233, 233);
+    padding: 0.5em 0.75em;
+    color: #41668b;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 100em;
+    border: none;
+}
+
 .tech-stack-container {
     display: flex;
     justify-content: space-between;
@@ -263,11 +299,17 @@ p {
 }
 
 @media (hover) {
-    .project-link:hover,
     .header-btn:hover,
     .contact-link:hover {
-        color: #6b95c0;
+        color: #87ceeb;
         text-decoration: underline;
+    }
+    .project-link:hover {
+        color: #41668b;
+        text-decoration: underline;
+    }
+    .demo-btn:hover {
+        opacity: 0.75;
     }
     .btn:hover {
         background-color: #41668b;
@@ -308,7 +350,7 @@ p {
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1024px) {
     .row {
         display: flex;
         gap: 2em;

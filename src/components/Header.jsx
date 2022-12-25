@@ -41,7 +41,7 @@ const Header = () => {
                                 .querySelector(".projects-container")
                                 .scrollIntoView({
                                     behavior: "smooth",
-                                    block: "center",
+                                    block: "start",
                                     inline: "nearest",
                                 });
                         }}
