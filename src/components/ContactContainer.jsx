@@ -31,7 +31,7 @@ const ContactContainer = (props, contactContainer) => {
                         Linkedin
                     </a>
                     <a
-                        href="https://drive.google.com/file/d/13hGZbrIS440UCIgCUgAzq0BIy_of4itH/view"
+                        href="/Brandon_Chu_Resume.pdf"
                         rel="noreferrer"
                         target="_blank"
                         className="contact-link"
