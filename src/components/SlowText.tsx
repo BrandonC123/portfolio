@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 
-const SlowText = ({ text, speed }) => {
+interface ISlowTextProps {
+  text: string;
+  speed: number;
+}
+
+const SlowText = ({ text, speed }: ISlowTextProps) => {
   const [placeholder, setPlaceholder] = useState(text[0]);
 
   const index = useRef(0);

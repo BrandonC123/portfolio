@@ -1,61 +1,108 @@
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Contact = () => {
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
+  const [sendButtonText, setSendButtonText] = useState("Send");
   const form = useRef();
+  const sendButtonRef = useRef();
 
-  const sendEmail = (btn) => {
+  const sendEmail = () => {
+    setIsSendingEmail(true);
     emailjs
       .sendForm(
-        "service_gckd70k",
-        "template_d1nlf8h",
+        "service_flheecf",
+        "template_qazgl3w",
         form.current,
         "MJtcHKRge4r2JlYuh"
       )
       .then(
-        (result) => {
-          console.log(result.text);
-          btn.textContent = "Feedback Sent";
+        () => {
+          setIsSendingEmail(false);
+          setSendButtonText("Sent!");
+          sendButtonRef.current.disabled = false;
+          setTimeout(() => {
+            setSendButtonText("Send");
+          }, 2000);
         },
         (error) => {
           console.log(error.text);
         }
       );
   };
+  useEffect(() => {
+    if (isSendingEmail) {
+      setSendButtonText("Sending...");
+      sendButtonRef.current.disabled = true;
+    }
+  }, [isSendingEmail]);
   return (
-    <div className="mt-4">
-      <h2 className="text-center text-2xl font-bold">Contact Us</h2>
-      <h3 className="text-md mb-5 text-center font-semibold text-[#727272]">
-        Enter your email and message here.
-      </h3>
+    <div>
+      <h2 className="text-center text-2xl text-secondary font-semibold">
+        Contact me
+      </h2>
+      <p className="text-center font-medium">
+        Send me an email if you'd like to get in touch!
+      </p>
 
-      <div className="mx-auto mt-3 flex w-[95%] max-w-[650px] flex-col items-center">
-        <form ref={form}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!form.current.checkValidity()) {
+            form.current.reportValidity();
+            return;
+          } else {
+            sendEmail();
+          }
+        }}
+        ref={form}
+        className="mx-auto gap-2 mt-3 flex w-[95%] max-w-[650px] flex-col items-start"
+      >
+        <div className="flex gap-2 flex-col md:flex-row w-full">
           <input
-            className="mb-5 w-full rounded-md border-[1px] border-base-300 bg-base-200 px-5 py-2 font-semibold text-[#444444]"
+            required
+            className="w-full rounded-md border-[1px] border-base-300 bg-base-200 px-5 py-2 font-semibold"
             type="email"
-            name="user_email"
+            name="sender_email"
             placeholder="Email"
           />
-          <textarea
-            placeholder="Get in touch with the team, suggest a feature, report a bug, or give us feedback!"
-            className="w-full rounded-md border-[1px] border-base-300 bg-base-200 px-4 py-2 font-semibold text-[#444444]"
-            name="feedback_content"
-            rows={4}
-            cols={40}
+          <input
+            required
+            className="w-full rounded-md border-[1px] border-base-300 bg-base-200 px-5 py-2 font-semibold"
+            type="name"
+            name="sender_name"
+            placeholder="Name"
           />
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              sendEmail(e.currentTarget);
-            }}
-            type="button"
-            className="btn-accent btn mt-3 rounded-md"
-          >
-            Send
-          </button>
-        </form>
-      </div>
+        </div>
+        <textarea
+          required
+          placeholder="Message"
+          className="w-full rounded-md border-[1px] border-base-300 bg-base-200 px-4 py-2 font-semibold"
+          name="message"
+          rows={4}
+          cols={40}
+        />
+        <button ref={sendButtonRef} className="btn-accent btn rounded-md">
+          <span>{sendButtonText}</span>
+          {isSendingEmail && (
+            <svg className="h-5 w-5 animate-spin" viewBox="0 0 24 24">
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          )}
+        </button>
+      </form>
     </div>
   );
 };
