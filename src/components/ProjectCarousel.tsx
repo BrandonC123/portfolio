@@ -10,24 +10,24 @@ interface IImage {
 
 const IMAGES: IImage[] = [
   {
-    image: "/assets/images/ex-images/imageapp-light.png",
-    text: "Image App - homepage",
+    image: "/assets/images/ex-images/imageapp-home.webp",
+    text: "Image App - Homepage",
   },
   {
-    image: "/assets/images/ex-images/imageapp-sub.png",
-    text: "Image App - subscription page",
+    image: "/assets/images/ex-images/imageapp-sub.webp",
+    text: "Image App - Subscription page",
   },
   {
     image: "/assets/images/ex-images/gh-home.png",
-    text: "Github Clone - homepage (signed in)",
+    text: "Github Clone - Homepage (signed in)",
   },
   {
     image: "/assets/images/ex-images/gh-home-not-sign.png",
-    text: "Github Clone - homepage (not signed in)",
+    text: "Github Clone - Homepage (not signed in)",
   },
   {
     image: "/assets/images/ex-images/form-creator.png",
-    text: "Form Creator App - a completed form",
+    text: "Form Creator App - A completed form",
   },
   {
     image: "/assets/images/ex-images/memory-card.png",
