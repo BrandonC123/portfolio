@@ -7,12 +7,84 @@ import {
   PersonPinCircleOutlined,
 } from "@mui/icons-material";
 import Contact from "../components/Contact";
-
 const { default: Head } = require("next/head");
 
 const HomePageContent = () => {
+  function updateScrollToContainer(container) {
+    const homeContainer = document.getElementById("home");
+    const aboutContainer = document.getElementById("about");
+    const projectsContainer = document.getElementById("projects");
+    const contactContainer = document.getElementById("contact");
+    switch (container) {
+      case "home":
+        homeContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+        break;
+      case "about":
+        aboutContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+        break;
+      case "projects":
+        projectsContainer.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        break;
+      case "contact":
+        contactContainer.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        break;
+      default:
+        break;
+    }
+  }
   return (
-    <main data-theme='base' className='bg-base-100 flex'>
+    <main data-theme='base' className='bg-base-100 md:flex'>
+      <header className='md:hidden bg-base-200 z-10 sticky top-0'>
+        <div className='py-4 w-[85vw] mx-auto justify-between flex items-center'>
+          <div className='flex gap-2 items-center justify-center'>
+            <img
+              src='https://media.licdn.com/dms/image/C5603AQHpDXHAJlO2Dg/profile-displayphoto-shrink_100_100/0/1662268175900?e=1709769600&v=beta&t=XsBExfa9ulVfgYVClaA0Ht5P6iWyfSx2Vg3b5bgIC54'
+              alt=''
+              className='rounded-full w-10 h-14-'
+            />
+            <div>
+              <p>Brandon Chu</p>
+              <p className='opacity-80'>Web Developer</p>
+            </div>
+          </div>
+          <div className='flex gap-3'>
+            <button
+              onClick={() => updateScrollToContainer("home")}
+              className='flex flex-col items-center hover:bg-base-100 rounded-lg'
+            >
+              <HomeOutlined style={{ fontSize: "1.75rem" }} />
+              <small>Home</small>
+            </button>
+            <button
+              onClick={() => updateScrollToContainer("about")}
+              className='flex items-center flex-col hover:bg-base-100 rounded-lg'
+            >
+              <PersonOutlineOutlined style={{ fontSize: "1.75rem" }} />
+              <small>About</small>
+            </button>
+            <button
+              onClick={() => updateScrollToContainer("projects")}
+              className='flex items-center flex-col hover:bg-base-100 rounded-lg'
+            >
+              <BusinessCenterOutlined style={{ fontSize: "1.75rem" }} />
+              <small>Projects</small>
+            </button>
+            <button
+              onClick={() => updateScrollToContainer("contact")}
+              className='flex items-center flex-col hover:bg-base-100 rounded-lg'
+            >
+              <ContactMailOutlined style={{ fontSize: "1.75rem" }} />
+              <small>Contact</small>
+            </button>
+          </div>
+        </div>
+      </header>
       <aside className='hidden md:block bg-base-200 xl:w-[13vw] px-2 lg:px-6 h-screen sticky top-0'>
         <div className='flex flex-col mt-10 items-center justify-center mb-4'>
           <img
@@ -23,7 +95,7 @@ const HomePageContent = () => {
           <p>Brandon Chu</p>
           <p className='opacity-80'>Web Developer</p>
         </div>
-        <div className='flex gap-3 justify-center items-center mb-4'>
+        <div className='flex gap-4 justify-center items-center mb-4'>
           <a
             href='https://www.linkedin.com/in/brandon-chu-02a87b23a/'
             target='_blank'
@@ -55,26 +127,42 @@ const HomePageContent = () => {
           </a>
         </div>
         <div className='flex flex-col items-center xl:items-stretch'>
-          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+          <button
+            onClick={() => updateScrollToContainer("home")}
+            className='flex flex-col xl:flex-row items-center hover:bg-base-100 xl:gap-3 p-2 rounded-lg'
+          >
             <HomeOutlined />
             <span className='hidden xl:block'>Home</span>
+            <small className='xl:hidden'>Home</small>
           </button>
-          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+          <button
+            onClick={() => updateScrollToContainer("about")}
+            className='flex flex-col xl:flex-row items-center hover:bg-base-100 xl:gap-3 p-2 rounded-lg'
+          >
             <PersonOutlineOutlined />
             <span className='hidden xl:block'>About</span>
+            <small className='xl:hidden'>About</small>
           </button>
-          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+          <button
+            onClick={() => updateScrollToContainer("projects")}
+            className='flex flex-col xl:flex-row items-center hover:bg-base-100 xl:gap-3 p-2 rounded-lg'
+          >
             <BusinessCenterOutlined />
             <span className='hidden xl:block'>Projects</span>
+            <small className='xl:hidden'>Projects</small>
           </button>
-          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+          <button
+            onClick={() => updateScrollToContainer("contact")}
+            className='flex flex-col xl:flex-row items-center hover:bg-base-100 xl:gap-3 p-2 rounded-lg'
+          >
             <ContactMailOutlined />
             <span className='hidden xl:block'>Contact</span>
+            <small className='xl:hidden'>Contact</small>
           </button>
         </div>
       </aside>
-      <div className='w-[85vw] lg:w-[60vw] xl:w-[50vw] mx-auto'>
-        <section id='home' className='mt-[100px] mb-[75px]'>
+      <div className='w-[85vw] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] mx-auto'>
+        <section id='home' className='mt-10 md:mt-[100px] mb-[75px]'>
           <div className='mb-4'>
             <h1 className='text-4xl font-semibold mb-2'>
               Hello my name is Brandon Chu. <br />
@@ -143,8 +231,8 @@ const HomePageContent = () => {
                     California State University, Sacramento
                   </span>{" "}
                   <br />
-                  Bachelor of Science in Computer Science - Dean's Honor List
-                  2020-2024, GPA: 3.8
+                  Bachelor of Science - Computer Science <br /> Dean's Honor
+                  List 2020-2024, GPA: 3.832
                 </p>
                 <p></p>
               </div>
