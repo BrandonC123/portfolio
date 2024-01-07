@@ -265,7 +265,7 @@ const HomePageContent = () => {
             <div>
               <div className='relative mb-2'>
                 <img
-                  src='/assets/images/projects/gh-home.png'
+                  src='/assets/images/projects/gh-home.webp'
                   alt=''
                   className='rounded-lg'
                 />
@@ -285,7 +285,7 @@ const HomePageContent = () => {
             <div>
               <div className='relative mb-2'>
                 <img
-                  src='/assets/images/projects/video.png'
+                  src='/assets/images/projects/video.webp'
                   alt=''
                   className='rounded-lg'
                 />
@@ -304,7 +304,7 @@ const HomePageContent = () => {
             <div>
               <div className='relative mb-2'>
                 <img
-                  src='/assets/images/projects/form-creator.png'
+                  src='/assets/images/projects/form-creator.webp'
                   alt=''
                   className='rounded-lg'
                 />
@@ -352,7 +352,7 @@ const HomePage = () => {
           content="View my latest projects and contact information. Let's connect!"
         />
         <meta property='og:image' content='https://iili.io/J7YV1lp.jpg' />
-        <meta property='og:image:type' content='image/png' />
+        <meta property='og:image:type' content='image/jpg' />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='1200' />
         <meta name='twitter:card' content='summary_large_image' />
