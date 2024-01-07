@@ -243,16 +243,18 @@ const HomePageContent = () => {
           <h2 className='text-3xl font-medium mb-4'>Key Projects</h2>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
             <div>
-              <div className='relative mb-2'>
-                <img
-                  src='/assets/images/projects/imageapp-home.webp'
-                  alt=''
-                  className='rounded-lg'
-                />
-                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
-                  Full-Stack Developer @ Image App
-                </p>
-              </div>
+              <a target='_blank' href='https://imageapp.xyz'>
+                <div className='relative mb-2'>
+                  <img
+                    src='/assets/images/projects/imageapp-home.webp'
+                    alt=''
+                    className='rounded-lg hover:scale-105'
+                  />
+                  <p className='absolute bg-base-200 font-semibold text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                    Full-Stack Developer @ Image App
+                  </p>
+                </div>
+              </a>
               <h4 className='font-medium text-lg'>
                 Image App <br />
                 React TypeScript, Tailwind, Node, Express, Firebase
@@ -263,16 +265,18 @@ const HomePageContent = () => {
               </p>
             </div>
             <div>
-              <div className='relative mb-2'>
-                <img
-                  src='/assets/images/projects/gh-home.webp'
-                  alt=''
-                  className='rounded-lg'
-                />
-                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
-                  Personal Project
-                </p>
-              </div>
+              <a target='_blank' href='https://github-clone-5883f.web.app/'>
+                <div className='relative mb-2'>
+                  <img
+                    src='/assets/images/projects/gh-home.webp'
+                    alt=''
+                    className='rounded-lg hover:scale-105'
+                  />
+                  <p className='absolute bg-base-200 font-semibold text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                    Personal Project
+                  </p>
+                </div>
+              </a>
               <h4 className='font-medium text-lg'>
                 GitHub Clone <br />
                 React & Firebase (Auth, Hosting, DB)
@@ -289,7 +293,7 @@ const HomePageContent = () => {
                   alt=''
                   className='rounded-lg'
                 />
-                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                <p className='absolute bg-base-200 font-semibold text-sm bottom-0 right-0 p-1 rounded-tl-md'>
                   @ CSUS - CSC Senior Project
                 </p>
               </div>
@@ -308,7 +312,7 @@ const HomePageContent = () => {
                   alt=''
                   className='rounded-lg'
                 />
-                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                <p className='absolute bg-base-200 font-semibold text-sm bottom-0 right-0 p-1 rounded-tl-md'>
                   @ CSUS - CSC 131
                 </p>
               </div>
