@@ -19,11 +19,11 @@ const Contact = () => {
       .then(
         () => {
           setIsSendingEmail(false);
-          setSendButtonText("Sent!");
+          setSendButtonText("Email Sent!");
           sendButtonRef.current.disabled = false;
           setTimeout(() => {
             setSendButtonText("Send");
-          }, 2000);
+          }, 10000);
         },
         (error) => {
           console.log(error.text);

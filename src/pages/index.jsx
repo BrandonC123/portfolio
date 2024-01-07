@@ -113,7 +113,7 @@ const HomePageContent = () => {
             </p>
             <p>
               At my most recent position I have leveraged the above to
-              contribute in creating a SAAS focused around AI technologies using
+              contribute in creating a SaaS focused around AI technologies using
               services like{" "}
               <a href='https://replicate.com/' target='_blank' className='link'>
                 Replicate
@@ -152,44 +152,91 @@ const HomePageContent = () => {
           </div>
         </section>
         <section id='projects' className='mb-[75px]'>
-          <h2 className='text-3xl font-medium mb-2'>Key Projects</h2>
+          <h2 className='text-3xl font-medium mb-4'>Key Projects</h2>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
             <div>
-              <img
-                src='/assets/images/projects/imageapp-home.webp'
-                alt=''
-                className='rounded-lg'
-              />
-              <p>Image App</p>
+              <div className='relative mb-2'>
+                <img
+                  src='/assets/images/projects/imageapp-home.webp'
+                  alt=''
+                  className='rounded-lg'
+                />
+                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                  Full-Stack Developer @ Image App
+                </p>
+              </div>
+              <h4 className='font-medium text-lg'>
+                Image App <br />
+                React TypeScript, Tailwind, Node, Express, Firebase
+              </h4>
+              <p>
+                SaaS platform focused around AI generative technology
+                integrating services like image generation & LLMs.
+              </p>
             </div>
             <div>
-              <img
-                src='/assets/images/projects/gh-home.png'
-                alt=''
-                className='rounded-lg'
-              />
-              <p>GitHub Clone</p>
+              <div className='relative mb-2'>
+                <img
+                  src='/assets/images/projects/gh-home.png'
+                  alt=''
+                  className='rounded-lg'
+                />
+                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                  Personal Project
+                </p>
+              </div>
+              <h4 className='font-medium text-lg'>
+                GitHub Clone <br />
+                React & Firebase (Auth, Hosting, DB)
+              </h4>
+              <p>
+                A GitHub clone featuring repository creation, secure user
+                authentication via Firebase, and file upload capabilities.
+              </p>
             </div>
             <div>
-              <img
-                src='/assets/images/projects/imageapp-home'
-                alt=''
-                className='rounded-lg'
-              />
-              <p>Web Conferencing App (Ongoing)</p>
+              <div className='relative mb-2'>
+                <img
+                  src='/assets/images/projects/video.png'
+                  alt=''
+                  className='rounded-lg'
+                />
+                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                  @ CSUS - CSC Senior Project
+                </p>
+              </div>
+              <h4 className='font-medium text-lg'>
+                Web Conferencing App (Ongoing) <br /> Vue, Node, FaunaDB, WebRTC
+              </h4>
+              <p>
+                Video conferencing application with a focus on client specific
+                requests including specialized breakout rooms and video primers.
+              </p>
             </div>
             <div>
-              <img
-                src='/assets/images/projects/form-creator.png'
-                alt=''
-                className='rounded-lg'
-              />
-              <p>Form Creator</p>
+              <div className='relative mb-2'>
+                <img
+                  src='/assets/images/projects/form-creator.png'
+                  alt=''
+                  className='rounded-lg'
+                />
+                <p className='absolute bg-base-200 font-medium text-sm bottom-0 right-0 p-1 rounded-tl-md'>
+                  @ CSUS - CSC 131
+                </p>
+              </div>
+              <h4 className='font-medium text-lg'>
+                Form Creator Application <br /> React & Springboot
+              </h4>
+              <p>
+                A Drupal-like application which allows for form creation,
+                retrieval, and display of various form responses. It also
+                enables users to share forms conveniently through dynamic links.
+              </p>
             </div>
           </div>
         </section>
-        <section id='contact' className='mb-6'>
-          <h2 className='text-3xl font-medium'>Contact </h2>
+        <section id='contact' className='mb-14'>
+          <h2 className='text-3xl font-medium mb-2'>Contact</h2>
           <Contact />
         </section>
         <footer className='py-6 border-t border-opacity-30 border-base-content'>
@@ -216,12 +263,12 @@ const HomePage = () => {
           property='og:description'
           content="View my latest projects and contact information. Let's connect!"
         />
-        <meta property='og:image' content='https://iili.io/J5Q2JAN.jpg' />
+        <meta property='og:image' content='https://iili.io/J7YV1lp.jpg' />
         <meta property='og:image:type' content='image/png' />
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='1200' />
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:image:src' content='https://iili.io/J5Q2JAN.jpg' />
+        <meta name='twitter:image:src' content='https://iili.io/J7YV1lp.jpg' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content="Brandon's Portfolio" />
         <meta

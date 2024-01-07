@@ -38,13 +38,13 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel='icon' href='/favicon.png' />
+        <link rel='apple-touch-icon' href='/apple-touch-icon.jpeg' />
         {/* Defaults */}
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="1200" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property='og:image:type' content='image/png' />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='1200' />
+        <meta name='twitter:card' content='summary_large_image' />
       </Head>
       <DaisyThemeProvider>
         <Layout>
