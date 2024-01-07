@@ -1,222 +1,203 @@
-import ProjectCarousel from "../components/ProjectCarousel";
-import SlowText from "../components/SlowText";
+import {
+  BusinessCenterOutlined,
+  ContactMailOutlined,
+  CopyrightOutlined,
+  HomeOutlined,
+  PersonOutlineOutlined,
+  PersonPinCircleOutlined,
+} from "@mui/icons-material";
 import Contact from "../components/Contact";
 
 const { default: Head } = require("next/head");
 
 const HomePageContent = () => {
   return (
-    <main>
-      <div className='relative'>
-        <img
-          src='/assets/images/homepage-bg.jpeg'
-          alt=''
-          className='w-[100vw] h-[100vh] opacity-40 object-cover'
-        />
-        <div className='absolute min-w-[350px] max-md:text-center top-1/2 -translate-y-[50%] right-1/2 translate-x-[50%]'>
-          <div className='hidden md:block'>
-            <p className='text-4xl mb-2 font-semibold'>
-              <SlowText text={"Hello my name is Brandon Chu."} speed={40} />
-            </p>
-            <p className='text-lg'>
-              <SlowText
-                text={
-                  "I am currently a Computer Science major at California State University, Sacramento."
-                }
-                speed={40}
-              />
-              <span className='text-transparent invisible'>
-                I am currently a Senior Computer Science student at California
-                State University, Sacramento.
-              </span>
-            </p>
-          </div>
-          <div className='md:hidden'>
-            <p className='text-4xl mb-2 font-semibold'>
-              Hello my name is Brandon Chu.
-            </p>
-            <p className='text-lg'>
-              I am currently a Senior Computer Science student at California
-              State University, Sacramento.
-            </p>
-          </div>
+    <main data-theme='base' className='bg-base-100 flex'>
+      <aside className='hidden md:block bg-base-200 xl:w-[13vw] px-2 lg:px-6 h-screen sticky top-0'>
+        <div className='flex flex-col mt-10 items-center justify-center mb-4'>
+          <img
+            src='https://media.licdn.com/dms/image/C5603AQHpDXHAJlO2Dg/profile-displayphoto-shrink_100_100/0/1662268175900?e=1709769600&v=beta&t=XsBExfa9ulVfgYVClaA0Ht5P6iWyfSx2Vg3b5bgIC54'
+            alt=''
+            className='rounded-full w-14 h-14 mb-4'
+          />
+          <p>Brandon Chu</p>
+          <p className='opacity-80'>Web Developer</p>
         </div>
-      </div>
-      <div class='my-8 w-[90%] max-w-md mx-auto'>
-        <hr class='border-t border-base-content' />
-      </div>
-      <div className='mx-auto w-[90%] max-w-[1100px] mb-[50px]'>
-        <section className='text-center md:text-left'>
-          <h2 className='mb-2 text-2xl font-semibold text-secondary'>About</h2>
-          <div className='flex flex-col md:flex-row gap-2'>
-            <div className='md:w-[50%]'>
-              <p className='text-md mb-2'>
-                Welcome to my website! Here you will find my various projects as
-                well as related links and contact information. The projects
-                include personal and academic based projects.
-              </p>
-              <p className='text-md mb-2'>
-                My primary focus is Full-Stack Web Development. I have deployed
-                multiple projects using technologies including React, Node,
-                Express and Firebase.
-              </p>
-              <p className='text-md'>
-                At my most recent position I have leveraged the above to
-                contribute in creating an AI image generation platform with
-                using services like Stable Diffusion and OpenAI's APIs (Chat
-                GPT-4 & DALL-E, Whisper).
-              </p>
+        <div className='flex gap-3 justify-center items-center mb-4'>
+          <a
+            href='https://www.linkedin.com/in/brandon-chu-02a87b23a/'
+            target='_blank'
+            className='icon'
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='25px'
+              height='25px'
+              viewBox='0 0 24 24'
+            >
+              <path
+                d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z'
+                fill='#C8CAD0'
+              ></path>
+            </svg>
+          </a>
+          <a
+            href='https://github.com/BrandonC123'
+            target='_blank'
+            className='icon'
+          >
+            <svg width='25px' height='25px' viewBox='0 0 32 32'>
+              <path
+                d='M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z'
+                fill='#C8CAD0'
+              ></path>
+            </svg>
+          </a>
+        </div>
+        <div className='flex flex-col items-center xl:items-stretch'>
+          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+            <HomeOutlined />
+            <span className='hidden xl:block'>Home</span>
+          </button>
+          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+            <PersonOutlineOutlined />
+            <span className='hidden xl:block'>About</span>
+          </button>
+          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+            <BusinessCenterOutlined />
+            <span className='hidden xl:block'>Projects</span>
+          </button>
+          <button className='flex items-center hover:bg-base-100 gap-3 p-2 rounded-lg'>
+            <ContactMailOutlined />
+            <span className='hidden xl:block'>Contact</span>
+          </button>
+        </div>
+      </aside>
+      <div className='w-[85vw] lg:w-[60vw] xl:w-[50vw] mx-auto'>
+        <section id='home' className='mt-[100px] mb-[75px]'>
+          <div className='mb-4'>
+            <h1 className='text-4xl font-semibold mb-2'>
+              Hello my name is Brandon Chu. <br />
+            </h1>
+            <p className='opacity-80 font-semibold text-4xl'>
+              Full-Stack Web Developer
+            </p>
+          </div>
+          <p className='text-xl flex items-center gap-3 mb-4'>
+            <PersonPinCircleOutlined
+              style={{ fontSize: "2rem" }}
+              className='text-primary'
+            />
+            Sacramento, California
+          </p>
+          <p className='text-lg'>
+            Results-driven Computer Science senior with proven work in
+            foundational web technologies. Eager to join a team as a full-time
+            web developer, leveraging quick learning abilities and passion for
+            technology to build innovative web solutions that engage users and
+            deliver business results.
+          </p>
+        </section>
+        <section id='about' className='mb-[75px]'>
+          <h2 className='text-3xl font-medium mb-4'>About</h2>
+          <div className='text-lg mb-4'>
+            <p>
+              Welcome to my website! Here you will find my various projects as
+              well as related links and contact information. The projects
+              include personal and academic based projects.
+            </p>
+            <p>
+              My primary focus is Full-Stack Web Development. I have deployed
+              multiple projects using technologies including React, Node,
+              Express and Firebase.
+            </p>
+            <p>
+              At my most recent position I have leveraged the above to
+              contribute in creating a SAAS focused around AI technologies using
+              services like{" "}
+              <a href='https://replicate.com/' target='_blank' className='link'>
+                Replicate
+              </a>
+              ,{" "}
+              <a href='https://stability.ai/' target='_blank' className='link'>
+                Stable Diffusion
+              </a>{" "}
+              and{" "}
+              <a
+                href='https://openai.com/blog/openai-api'
+                target='_blank'
+                className='link'
+              >
+                OpenAI
+              </a>{" "}
+              (Chat GPT-4, DALL-E, & Whisper).
+            </p>
+          </div>
+          <div>
+            <h3 className='text-xl font-medium pt-4 mb-2'>Education</h3>
+            <div className='flex gap-4'>
+              <p>2020 - May 2024</p>
               <div>
-                <p className='mb-2 text-lg font-semibold'>Let's connect!</p>
-                <div className='flex gap-[2rem] max-md:justify-center'>
-                  <a
-                    href='https://www.linkedin.com/in/brandon-chu-02a87b23a/'
-                    rel='noreferrer'
-                    target='_blank'
-                    className='contact-link'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='32'
-                      height='32'
-                      viewBox='0 0 24 24'
-                    >
-                      <path
-                        d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z'
-                        fill='#C8CAD0'
-                      />
-                    </svg>
-                  </a>
-                  <a
-                    href='https://github.com/BrandonC123'
-                    rel='noreferrer'
-                    target='_blank'
-                    className='contact-link'
-                  >
-                    <svg width='32px' height='32px' viewBox='0 0 32 32'>
-                      <path
-                        d='M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z'
-                        fill='#C8CAD0'
-                      />
-                    </svg>
-                  </a>
-                </div>
+                <p className='text-lg'>
+                  <span className='font-semibold'>
+                    California State University, Sacramento
+                  </span>{" "}
+                  <br />
+                  Bachelor of Science in Computer Science - Dean's Honor List
+                  2020-2024, GPA: 3.8
+                </p>
+                <p></p>
               </div>
-            </div>
-            <div className='md:w-[50%]'>
-              <ProjectCarousel />
             </div>
           </div>
         </section>
-        <div class='my-8 max-w-md mx-auto'>
-          <hr class='border-t border-base-content' />
-        </div>
-        <section className='text-center md:text-left'>
-          <h2 className='text-2xl font-semibold text-secondary mb-2'>
-            Key Projects
-          </h2>
-          <ul className='flex flex-col gap-[2rem]'>
-            <li className='flex flex-col gap-3 lg:hover:shadow lg:hover:shadow-primary justify-between md:flex-row bg-base-200 rounded-md p-[1.5rem]'>
-              <div className='md:w-[40%]'>
-                <h3 className='text-xl mb-2 font-medium text-primary'>
-                  Image App
-                </h3>
-                <p className='mb-1'>
-                  Core contributor of a full-stack AI image generation and model
-                  training platform with thousands of unique visitors.
-                </p>
-                <p>Key implemented features include:</p>
-                <ul className='list-disc mb-1 list-inside ml-2'>
-                  <li>AI image generation & model training</li>
-                  <li>Subscription based payment using Stripe</li>
-                  <li>Image editing</li>
-                </ul>
-                <p className='mb-1'>
-                  Technologies: React (Next.js), Node.Js, JavaScript Tailwind,
-                  Firebase
-                </p>
-                <a
-                  href='https://imageapp.xyz'
-                  target='_blank'
-                  className='text-accent underline font-bold'
-                >
-                  Visit the site
-                </a>
-              </div>
+        <section id='projects' className='mb-[75px]'>
+          <h2 className='text-3xl font-medium mb-2'>Key Projects</h2>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+            <div>
               <img
-                src='/assets/images/ex-images/imageapp-home.webp'
+                src='/assets/images/projects/imageapp-home.webp'
                 alt=''
-                className='md:w-[55%] shadow-accent rounded-md'
+                className='rounded-lg'
               />
-            </li>
-            <li className='flex flex-col gap-3 lg:hover:shadow lg:hover:shadow-primary justify-between md:flex-row bg-base-200 rounded-md p-[1.5rem]'>
-              <div className='md:w-[40%]'>
-                <h3 className='text-xl mb-2 font-medium text-primary'>
-                  Github Clone
-                </h3>
-                <p className='mb-1'>Clone of the GitHub website.</p>
-                <p>Key implemented features include:</p>
-                <ul className='list-disc mb-1 list-inside ml-2'>
-                  <li>Creating repositories</li>
-                  <li>User authentication via Firebase</li>
-                  <li>File upload</li>
-                </ul>
-                <p className='mb-1'>
-                  Technologies: React (Create React App), JavaScript, CSS,
-                  Firebase
-                </p>
-                <a
-                  href='https://github-clone-5883f.web.app/'
-                  target='_blank'
-                  className='text-accent underline font-bold'
-                >
-                  Visit the site
-                </a>
-              </div>
+              <p>Image App</p>
+            </div>
+            <div>
               <img
-                src='/assets/images/ex-images/gh-home.png'
+                src='/assets/images/projects/gh-home.png'
                 alt=''
-                className='md:w-[55%] rounded-md'
+                className='rounded-lg'
               />
-            </li>
-            <li className='flex flex-col gap-3 lg:hover:shadow lg:hover:shadow-primary justify-between md:flex-row bg-base-200 rounded-md p-[1.5rem]'>
-              <div className='md:w-[40%]'>
-                <h3 className='text-xl mb-2 font-medium text-primary'>
-                  Form Creator App (Academic Project)
-                </h3>
-                <p className='mb-1'>
-                  Client requested project: A Drupal like form creator
-                  application. (Team of 7)
-                </p>
-                <p>Key implemented features include:</p>
-                <ul className='list-disc mb-1 list-inside ml-2'>
-                  <li>Form creation</li>
-                  <li>Fetching and viewing different form responses</li>
-                  <li>Sharing forms via a dynamic link</li>
-                </ul>
-                <p className='mb-1'>
-                  Technologies: React (Create React App), JavaScript, CSS,
-                  Springboot
-                </p>
-              </div>
+              <p>GitHub Clone</p>
+            </div>
+            <div>
               <img
-                src='/assets/images/ex-images/form-creator.png'
+                src='/assets/images/projects/imageapp-home'
                 alt=''
-                className='md:w-[55%] rounded-md'
+                className='rounded-lg'
               />
-            </li>
-          </ul>
+              <p>Web Conferencing App (Ongoing)</p>
+            </div>
+            <div>
+              <img
+                src='/assets/images/projects/form-creator.png'
+                alt=''
+                className='rounded-lg'
+              />
+              <p>Form Creator</p>
+            </div>
+          </div>
         </section>
+        <section id='contact' className='mb-6'>
+          <h2 className='text-3xl font-medium'>Contact </h2>
+          <Contact />
+        </section>
+        <footer className='py-6 border-t border-opacity-30 border-base-content'>
+          <p className='opacity-80 flex items-center justify-end gap-1 text-lg'>
+            <CopyrightOutlined /> 2024 Brandon Chu
+          </p>
+        </footer>
       </div>
-      <div class='my-8 w-[90%] max-w-md mx-auto'>
-        <hr class='border-t border-base-content' />
-      </div>
-      <Contact />
-      <footer className='bg-base-200 py-4 mt-10'>
-        <div className='w-[90vw]'>
-          <p className='text-right'>© 2024 Brandon Chu</p>
-        </div>
-      </footer>
     </main>
   );
 };

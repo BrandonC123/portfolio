@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { DaisyThemeContext } from "@/pages/_app";
 
 const Layout = ({ children }) => {
@@ -6,12 +6,8 @@ const Layout = ({ children }) => {
 
   return (
     theme.length !== 0 && (
-      <div data-theme={theme} className="min-h-screen">
-        {/* <Header />
-        <UsernameForm /> */}
-        {/* <ChatWindow /> */}
+      <div data-theme={"base"} className='min-h-screen'>
         {children}
-        {/* <Footer /> */}
       </div>
     )
   );

@@ -7,7 +7,24 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   daisyui: {
-    themes: ["night"],
+    themes: [
+      "night",
+      {
+        base: {
+          primary: "#78a4f5",
+          secondary: "#AF94EE",
+          accent: "#2f926d",
+          neutral: "#9ca3af",
+          "base-100": "#303030",
+          "base-200": "#212121",
+          "base-300": "#0F0F0F",
+          info: "#27262b",
+          success: "#5ed98d",
+          warning: "#fbbd23",
+          error: "#f85a4f",
+        },
+      },
+    ],
   },
   theme: {
     extend: {

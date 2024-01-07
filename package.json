@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.3",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
@@ -23,6 +26,6 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "daisyui": "^3.7.3"
+    "daisyui": "^4.5.0"
   }
 }
