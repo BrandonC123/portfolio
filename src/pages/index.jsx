@@ -44,7 +44,7 @@ const HomePageContent = () => {
         <div className='py-4 w-[85vw] mx-auto justify-between flex items-center'>
           <div className='flex gap-2 items-center justify-center'>
             <img
-              src='https://media.licdn.com/dms/image/C5603AQHpDXHAJlO2Dg/profile-displayphoto-shrink_100_100/0/1662268175900?e=1709769600&v=beta&t=XsBExfa9ulVfgYVClaA0Ht5P6iWyfSx2Vg3b5bgIC54'
+              src='https://avatars.githubusercontent.com/u/23132411?v=4'
               alt=''
               className='rounded-full w-10 h-14-'
             />
@@ -85,10 +85,10 @@ const HomePageContent = () => {
           </div>
         </div>
       </header>
-      <aside className='hidden md:block bg-base-200 xl:w-[13vw] px-2 lg:px-6 h-screen sticky top-0'>
+      <aside className='hidden md:block bg-base-200 xl:w-[15vw] 2xl:w-[13vw] px-2 lg:px-6 h-screen sticky top-0'>
         <div className='flex flex-col mt-10 items-center justify-center mb-4'>
           <img
-            src='https://media.licdn.com/dms/image/C5603AQHpDXHAJlO2Dg/profile-displayphoto-shrink_100_100/0/1662268175900?e=1709769600&v=beta&t=XsBExfa9ulVfgYVClaA0Ht5P6iWyfSx2Vg3b5bgIC54'
+            src='https://avatars.githubusercontent.com/u/23132411?v=4'
             alt=''
             className='rounded-full w-14 h-14 mb-4'
           />
