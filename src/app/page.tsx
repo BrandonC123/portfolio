@@ -6,7 +6,7 @@ import { Sidebar } from "@/components/Sidebar";
 export default function Home() {
   return (
     <div>
-      <main className='max-w-4xl mx-auto grid grid-cols-12 py-10'>
+      <main className='w-9/10 max-w-xl lg:max-w-4xl mx-auto lg:grid grid-cols-12 py-10'>
         <Sidebar />
         {/* main content */}
         <div className='flex flex-col flex-1 col-start-5 col-end-13'>
@@ -18,7 +18,6 @@ export default function Home() {
               Science in Computer Science from California State University,
               Sacramento.
             </p>
-            <p></p>
           </div>
           <div className='flex flex-col items-start gap-4 mb-6'>
             <h3 className='text-black border-b'>Skills</h3>
@@ -32,9 +31,39 @@ export default function Home() {
           <Experience />
           <div className='flex flex-col gap-4 mb-6'>
             <h3 className='text-black border-b self-start'>Education</h3>
-            <div className='flex gap-4 items-center justify-between bg-white p-4 rounded-lg shadow mb-4'>
+            {/* Mobile version */}
+            <div className='lg:hidden bg-white p-3 rounded-lg shadow mb-4'>
+              <div className='flex items-center gap-3'>
+                <img
+                  src='/csus.png'
+                  alt='CSUS Logo'
+                  className='h-14 w-14 flex-shrink-0 object-contain'
+                />
+                <div className='flex-1 min-w-0'>
+                  <div className='pb-1'>
+                    <p className='text-black font-semibold text-sm sm:text-base'>
+                      California State University, Sacramento
+                    </p>
+                    <p className='text-xs sm:text-sm text-gray-600'>
+                      Bachelor's of Science - Computer Science
+                    </p>
+                  </div>
+                  <div className='border-t pt-1'>
+                    <p className='text-xs sm:text-sm text-gray-600'>
+                      Dean's Honor List 2020-2024, GPA: 3.8
+                    </p>
+                    <p className='text-xs sm:text-sm font-medium text-gray-700'>
+                      Aug 2020 - Jul 2024
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop version */}
+            <div className='hidden lg:flex gap-4 items-center justify-between bg-white p-4 rounded-lg shadow mb-4'>
               <div className='flex items-center gap-4'>
-                <img src='/csus.png' alt='' className='h-15 w-15' />
+                <img src='/csus.png' alt='CSUS Logo' className='h-15 w-15' />
                 <div>
                   <p className='text-black'>
                     California State University, Sacramento
