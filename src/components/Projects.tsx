@@ -34,7 +34,7 @@ const ProjectCard = ({
       }`}
     >
       {/* Image Container */}
-      <div className='relative h-48 sm:h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200'>
+      <div className='relative h-48 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200'>
         <img src={image} alt={title} className='w-full h-full object-cover' />
         {/* Tech stack badge */}
         <div className='absolute top-3 right-3 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full'>
@@ -43,8 +43,8 @@ const ProjectCard = ({
       </div>
 
       {/* Content */}
-      <div className='p-5 sm:p-6'>
-        <h4 className='text-lg sm:text-xl font-bold text-black mb-2'>
+      <div className='p-3 sm:p-4'>
+        <h4 className='text-lg sm:text-xl font-bold text-black mb-1'>
           {title}
         </h4>
         <p className='text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3'>
@@ -58,32 +58,24 @@ const ProjectCard = ({
 export const Projects = () => {
   const projects = [
     {
-      image: "/next.svg",
-      title: "Portfolio Website",
+      image: "/projects/video.webp",
+      title: "TribeMeet",
+      techStack: "Vue.js • TypeScript • Tailwind • 100ms",
+      description: "CSUS CSC Senior Project - Video conferencing application",
+    },
+    {
+      image: "/projects/repo.png",
+      title: "RepoLaunch",
       techStack: "Next.js • TypeScript • Tailwind",
       description:
-        "A modern, responsive portfolio website showcasing my projects and experience. Built with Next.js 14, featuring server-side rendering and optimized performance.",
+        "Template based GitHub README.md generator with Markdown/HTML live rendering.",
     },
     {
-      image: "/vercel.svg",
-      title: "E-Commerce Platform",
-      techStack: "React • Node.js • MongoDB",
-      description:
-        "Full-stack e-commerce solution with user authentication, payment processing, and admin dashboard. Features include product management, cart functionality, and order tracking.",
-    },
-    {
-      image: "/globe.svg",
-      title: "Task Management App",
-      techStack: "React • Firebase • TypeScript",
+      image: "/projects/gh-home.webp",
+      title: "GitHub Clone",
+      techStack: "React • Firebase • CSS",
       description:
         "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Built with Firebase for backend services.",
-    },
-    {
-      image: "/window.svg",
-      title: "Weather Dashboard",
-      techStack: "React • API Integration • Chart.js",
-      description:
-        "Interactive weather dashboard displaying current conditions, forecasts, and historical data. Features interactive charts and location-based weather information.",
     },
   ];
 

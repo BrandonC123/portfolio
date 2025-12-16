@@ -36,69 +36,39 @@ const ExperienceItem = ({
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      {/* Mobile version */}
-      <div className='lg:hidden'>
-        <div className='flex items-start gap-3 mb-3'>
+      <div className='flex flex-col lg:flex-row lg:items-start lg:justify-between mb-3 lg:mb-3 lg:pb-3 lg:border-b lg:border-gray-100'>
+        <div className='flex gap-2 lg:gap-3 items-start'>
           <img
             src={companyLogo}
             alt={`${companyName} logo`}
-            className='h-12 w-12 sm:h-14 sm:w-14 rounded-lg object-cover flex-shrink-0 border border-gray-100'
+            className='h-12 w-12 sm:h-14 sm:w-14 lg:h-12 lg:w-12 rounded-lg object-cover flex-shrink-0 border border-gray-100'
           />
           <div className='flex-1 min-w-0'>
-            <h4 className='text-black font-semibold text-sm sm:text-base mb-0.5'>
+            <h4 className='text-black font-semibold text-sm sm:text-base lg:text-base mb-0 lg:mb-1'>
               {companyName}
             </h4>
-            <p className='text-gray-700 text-xs sm:text-sm font-medium mb-2'>
+            <p className='text-gray-700 text-xs sm:text-sm lg:text-sm font-medium mb-0.5 lg:mb-0'>
               {role}
             </p>
-            <p className='text-xs sm:text-sm text-gray-500 font-medium'>
+            <p className='text-xs sm:text-sm lg:hidden text-gray-500 font-medium'>
               {dateRange}
             </p>
           </div>
         </div>
-        <ul className='space-y-2 mt-3'>
-          {responsibilities.map((responsibility, idx) => (
-            <li
-              key={idx}
-              className='text-xs sm:text-sm text-gray-700 leading-relaxed pl-4 relative before:content-["•"] before:absolute before:left-0 before:text-gray-400 before:font-bold'
-            >
-              {responsibility}
-            </li>
-          ))}
-        </ul>
+        <p className='text-xs sm:text-sm lg:text-sm text-gray-600 lg:text-gray-600 font-medium lg:whitespace-nowrap lg:ml-4 mt-0.5 lg:mt-0'>
+          {dateRange}
+        </p>
       </div>
-
-      {/* Desktop version */}
-      <div className='hidden lg:block'>
-        <div className='flex items-start justify-between mb-3 pb-3 border-b border-gray-100'>
-          <div className='flex gap-3 items-start'>
-            <img
-              src={companyLogo}
-              alt={`${companyName} logo`}
-              className='h-12 w-12 rounded-lg object-cover flex-shrink-0 border border-gray-100'
-            />
-            <div>
-              <h4 className='text-black font-semibold text-base mb-1'>
-                {companyName}
-              </h4>
-              <p className='text-gray-700 text-sm font-medium'>{role}</p>
-            </div>
-          </div>
-          <p className='text-sm text-gray-600 font-medium whitespace-nowrap ml-4'>
-            {dateRange}
-          </p>
-        </div>
-        <ul className='space-y-2'>
-          {responsibilities.map((responsibility, idx) => (
-            <li
-              key={idx}
-              className='text-sm text-gray-700 leading-relaxed pl-5 relative before:content-["•"] before:absolute before:left-2 before:text-gray-400 before:font-bold'
-            >
-              {responsibility}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className='space-y-2 lg:space-y-2'>
+        {responsibilities.map((responsibility, idx) => (
+          <li
+            key={idx}
+            className='text-sm md:text-base text-gray-700 leading-relaxed pl-4 lg:pl-5 relative before:content-["•"] before:absolute before:left-0 lg:before:left-2 before:text-gray-400 before:font-bold'
+          >
+            {responsibility}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -106,10 +76,21 @@ const ExperienceItem = ({
 export const Experience = () => {
   const experiences = [
     {
+      companyLogo: "/pressplay.jpg",
+      companyName: "Press Play Dance Convention",
+      role: "Software Developer",
+      dateRange: "July 2025 - Present",
+      responsibilities: [
+        "Built responsive web applications using HTML, CSS, and JavaScript, integrating frontend components with backend services to ensure dynamic data rendering and seamless user experience",
+        "Created scalable Python data processing scripts to normalize and verify data via third-party REST APIs, leveraging batching and concurrency for efficient handling of large datasets",
+        "Worked cross-functionally using Agile methodology to ensure functional and design requirements were met for projects",
+      ],
+    },
+    {
       companyLogo: "/eworld.jpg",
       companyName: "eWorld Enterprise Solutions",
       role: "Software Developer",
-      dateRange: "October 2024 - Present",
+      dateRange: "October 2024 - June 2025",
       responsibilities: [
         "Built responsive web applications using HTML, CSS, and JavaScript, integrating frontend components with backend services to ensure dynamic data rendering and seamless user experience",
         "Created scalable Python data processing scripts to normalize and verify data via third-party REST APIs, leveraging batching and concurrency for efficient handling of large datasets",

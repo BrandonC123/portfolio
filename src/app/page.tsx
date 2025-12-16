@@ -6,7 +6,7 @@ import { Sidebar } from "@/components/Sidebar";
 export default function Home() {
   return (
     <div>
-      <main className='w-9/10 max-w-xl lg:max-w-4xl mx-auto lg:grid grid-cols-12 py-10'>
+      <main className='w-9/10 max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto lg:grid grid-cols-12 py-10'>
         <Sidebar />
         {/* main content */}
         <div className='flex flex-col flex-1 col-start-5 col-end-13'>
