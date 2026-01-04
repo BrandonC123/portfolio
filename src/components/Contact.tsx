@@ -2,6 +2,9 @@
 
 import emailjs from "@emailjs/browser";
 import { useEffect, useRef, useState } from "react";
+import { SectionHeader } from "./SectionHeader";
+import { ScrollReveal } from "./ScrollReveal";
+import { TbMail } from "react-icons/tb";
 
 export const Contact = () => {
   const [isSendingEmail, setIsSendingEmail] = useState(false);
@@ -41,8 +44,8 @@ export const Contact = () => {
     }
   }, [isSendingEmail]);
   return (
-    <div className='flex flex-col gap-4 mb-6'>
-      <h3 className='text-black border-b self-start'>Contact</h3>
+    <ScrollReveal className='flex flex-col gap-4 mb-8'>
+      <SectionHeader title='Contact' icon={<TbMail className='text-lg' />} />
 
       <form
         onSubmit={(e) => {
@@ -56,19 +59,19 @@ export const Contact = () => {
           }
         }}
         ref={formRef}
-        className='gap-2 mt-3 flex flex-col items-start'
+        className='gap-3 mt-2 flex flex-col items-start'
       >
-        <div className='flex gap-2 flex-col md:flex-row w-full'>
+        <div className='flex gap-3 flex-col md:flex-row w-full'>
           <input
             required
-            className='w-full rounded-md border-[1px] bg-white px-5 py-2'
+            className='w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-800 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all duration-200'
             type='email'
             name='sender_email'
             placeholder='Email'
           />
           <input
             required
-            className='w-full rounded-md border-[1px] bg-white px-5 py-2'
+            className='w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-800 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all duration-200'
             type='name'
             name='sender_name'
             placeholder='Name'
@@ -77,16 +80,15 @@ export const Contact = () => {
         <textarea
           required
           placeholder='Message'
-          className='w-full rounded-md border-[1px] bg-white px-4 py-2'
+          className='w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-800 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all duration-200 resize-none'
           name='message'
           rows={4}
-          cols={40}
         />
         <button
           ref={sendButtonRef}
-          className='flex gap-2 items-center bg-[#292929] hover:bg-[#3a3a3a] text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 ease-in-out cursor-pointer'
+          className='flex gap-2 items-center bg-accent hover:bg-accent-dark text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 ease-in-out cursor-pointer shadow-md hover:shadow-lg hover:scale-[1.02]'
         >
-          <span className='text-base-content'>{sendButtonText}</span>
+          <span>{sendButtonText}</span>
           {isSendingEmail && (
             <svg className='h-5 w-5 animate-spin' viewBox='0 0 24 24'>
               <circle
@@ -106,6 +108,6 @@ export const Contact = () => {
           )}
         </button>
       </form>
-    </div>
+    </ScrollReveal>
   );
 };
